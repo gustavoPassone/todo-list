@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+    --cor-principal: #14b8a6;
+    --button-background: #43c6b7;
+    --button-hover: #78cec4;
+    --input-border: #bbbbbb77;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -12,20 +19,22 @@ body {
 }
 
 button {
-    background-color: #fdfdfd;
-    color: #102f5e;
-    border: 2px solid #102f5e;
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
     padding: .3rem .6rem;
     font-size: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    padding: 10px;
     transition: .4s;
 }
 
 button:hover {
-    background-color: #102f5e;
+    background-color: var(--button-hover);
     color: #fff;
 }
 
@@ -34,7 +43,7 @@ button:hover > i {
 }
 
 button i {
-    color: #102f5e;
+    color: #fff;
     font-weight: bold;
     pointer-events: none;
 }
@@ -76,13 +85,22 @@ input, select {
         & input {
             margin-right: .3rem;
             border-radius: 5px;
-            border: 1px solid #5050507a;
+            border: 1px solid var(--input-border);
             outline: none;
         }
 
         & input:focus {
-            box-shadow: 3px 1px 4px #333;
+            border: 1px solid #5757577a;
             transition: .3s;
+        }
+
+        & button {
+            background-color: #26a1f3;
+            padding: 10px 13px;
+        }
+
+        & button:hover {
+            background-color: #1987d1;
         }
     }
 
@@ -115,7 +133,15 @@ input, select {
                 & input {
                     width: 100%;
                     margin-right: 0.3rem;
+                    border-radius: 5px;
+                    border: 1px solid var(--input-border);
+                    outline: none;
                 }
+
+                & input:focus {
+                    border: 1px solid #5757577a;
+                    transition: .3s;
+                }   
             }
         }
 
@@ -126,7 +152,17 @@ input, select {
 
             & select {
                 flex: 1;
-            }
+                width: 100%;
+                margin-right: 0.3rem;
+                border-radius: 5px;
+                border: 1px solid var(--input-border);
+                outline: none;
+                }
+
+                & select:focus {
+                    border: 1px solid #5757577a;
+                    transition: .3s;
+                }
         }
     }
 
@@ -146,12 +182,17 @@ input, select {
 
             & button {
                 margin-left: 0.4rem;
+                
             }
         }
     }
 
     & .done {
-        background-color: #395169;
+        background-color: var(--cor-principal);
+
+        & button {
+            background-color: var(--button-background);
+        }
 
         & h3 {
             color: #fff;
